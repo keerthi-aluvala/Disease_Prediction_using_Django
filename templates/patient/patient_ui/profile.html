@@ -5,13 +5,8 @@
     {% block head %}
    
 {% endblock %}
-
-
-
-
+  
 {% block body %}
-
-
 
 <br>
 <div class="container mt-2 mb-3">
@@ -38,17 +33,17 @@
 
 
         <div class="col" >
-               <div class="row">
+               <div class="row" style="padding:5px;">
             
-               <a id="links" class="btn btn-outline-info btn-block" href="#">check disease </a><br>
+               <a id="links" class="btn btn-outline-info btn-block" href="{% url 'checkdisease' %}" style="background-color:#1a75ff;color:#fff;padding:10px;">Check Disease </a><br>
                </div>
                 
-               <div class="row">
-                <a class="btn btn-outline-info btn-block" href="{% url 'pconsultation_history' %}">view consulation history</a><br>
+               <div class="row" style="padding:5px;">
+                <a class="btn btn-outline-info btn-block" href="{% url 'pconsultation_history' %}" style="background-color:#1a75ff;color:#fff;padding:10px;">View Consultation History</a><br>
                 </div>
 
-               <div class="row">
-                <button class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#myModal-feedback">Give feedbacks </button><br>
+               <div class="row" style="padding:5px;">
+                <button class="btn btn-outline-info btn-block" data-toggle="modal" data-target="#myModal-feedback" style="background-color:#1a75ff;color:#fff;padding:10px;">Give feedbacks </button><br>
                 </div>
                
 

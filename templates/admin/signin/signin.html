@@ -85,14 +85,14 @@ span.psw {
 
   <div class="container" id="box" >
 <center>
-<h2> Admin Signin</h2>
+<h2> Admin Sign In</h2>
 </center>
-<form action="sign_in_admin" method="post">
+<form action="sign_in_admin" method="POST">
   
   {% csrf_token %}
-  <div class="imgcontainer">
-    <img src="{% static 'admin/signin/admin.png' %}" alt="Avatar" class="avatar">
-  </div>
+  {% comment %} <div class="imgcontainer">
+    <img src="{% static 'signin_page/admin_signin.jpg' %}" alt="Avatar" class="avatar">
+  </div> {% endcomment %}
 
   <center>
     <div>
@@ -110,7 +110,7 @@ span.psw {
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
         
-    <button type="submit">Signin</button>
+    <button type="submit">Sign In</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>

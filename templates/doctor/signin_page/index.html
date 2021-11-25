@@ -5,7 +5,7 @@
 
  
 	{% block head %}
-	
+	<link rel="stylesheet" href="{% static 'doctor/signup_form/signup.css' %}">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="{% static 'signin_page/images/icons/favicon.ico' %}"/>
 <!--===============================================================================================-->
@@ -43,7 +43,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form" action="sign_in_doctor" method="POST" >
+				<form class="login100-form validate-form" action="sign_in_doctor" method="POST" style="border: 3px solid #f1f1f1;padding:20px;">
 					
   {% csrf_token %}
 
@@ -81,15 +81,15 @@
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="submit">
+							{% comment %} <div class="login100-form-bgbtn"></div> {% endcomment %}
+							<button type="submit" class="btn">
 							Login	
 							</button>
 						</div>
 					</div>
 
 					
-					<div class="flex-col-c p-t-155">
+					<div class="flex-col-c p-t-15">
 						<span class="txt1 p-b-17">
 							Don't Have An Account 
 						</span>

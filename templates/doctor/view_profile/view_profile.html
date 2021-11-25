@@ -9,8 +9,66 @@
   <link rel="stylesheet" href="{% static 'forms.css' %}">
   <link rel="stylesheet" href="{% static 'responsive.css' %}">
   <link rel="stylesheet" href="{% static 'base.css' %}">
+{% block css %}
 
 
+{% endblock %}
+
+
+
+    <style>
+.form 
+        {
+             padding: 10px;
+        }
+  input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0px;
+  display: inline-block; 
+  width:200px;
+  font-weight:bold;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.col-75 {
+  float: left;
+  width: 100%; 
+  margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+.form-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+    </style>
 
 {% endblock %}
 
@@ -27,7 +85,7 @@
 
 <fieldset class="module aligned " >
 
-<div class="border border-dark rounded-lg mx-auto mt-3 " style="width:600px">
+<div class="border border-dark rounded-lg mx-auto mt-3 " style="width:500px;padding:10px;">
 
 <div class="container mt-3 "  >
 
@@ -39,12 +97,12 @@
 
   <div class="form-row field-username">
 
-
-        <div>
+        <div class="col-45">
             
             
-                <label class="required" for="id_username">username:</label>
-                
+                <label class="required" for="id_username">Username:</label>
+        </div>
+          <div class="col-75">      
                     <input type="text" name="username" value={{duser.username}} class="vTextField" maxlength="50" required="" id="id_username">
                 
             
@@ -57,10 +115,12 @@
 <div class="form-row field-name">
 
 
-    <div>
+    <div class="col-45">
         
         
             <label class="required" for="id_name">Name:</label>
+            </div>
+        <div class="col-75">
             
                 <input type="text" name="name" value={{duser.doctor.name}} class="vTextField" maxlength="50" required="" id="id_name">
             
@@ -75,10 +135,12 @@
 <div class="form-row field-email">
 
 
-        <div>
+        <div class="col-45">
             
             
                 <label class="required" for="id_email">Email:</label>
+                </div>
+                <div class="col-75">
                 
                     <input type="text" name="email" value={{duser.email}} class="vTextField" maxlength="100" required="" id="id_email">
                 
@@ -92,10 +154,12 @@
 <div class="form-row field-dob">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_dob">Dob:</label>
+            </div>
+            <div class="col-75">
             
                 <input type="text" name="dob" value={{duser.doctor.dob|date:'Y-m-d'}} class="vDateField" size="10" required="" id="id_dob">
   </div>
@@ -105,10 +169,12 @@
 <div class="form-row field-img">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label for="id_img">Img:</label>
+            </div>
+            <div class="col-75">
             
                 <input type="file" name="img" accept="image/*" id="id_img">
             
@@ -121,10 +187,12 @@
 <div class="form-row field-address">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_address">Address:</label>
+            </div>
+            <div class="col-75">
             
                 <input type="text" name="address" value={{duser.doctor.address}} class="vTextField" maxlength="100" required="" id="id_address">
             
@@ -137,10 +205,12 @@
 <div class="form-row field-mobile_no">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_mobile_no">Mobile no:</label>
+            </div>
+            <div class="col-75">
             
                 <input type="text" name="mobile_no" value={{duser.doctor.mobile_no}} class="vTextField" maxlength="15" required="" id="id_mobile_no">
             
@@ -153,10 +223,12 @@
 <div class="form-row field-gender">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_gender">Gender:</label>
+            </div>
+            <div class="col-75">
             
                 <input type="text" name="gender" value={{duser.doctor.gender}} class="vTextField" maxlength="10" required="" id="id_gender">
             
@@ -169,10 +241,12 @@
 <div class="form-row field-registration_no">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_registration_no">Registration no:</label>
+            </div>
+            <div class="col-75">
             
                 <input type="text" name="registration_no" value={{duser.doctor.registration_no}} class="vTextField" maxlength="20" required="" id="id_registration_no">
             
@@ -185,11 +259,12 @@
 <div class="form-row field-year_of_registration">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_year_of_registration">Year of registration:</label>
-            
+        </div>
+        <div class="col-75">    
                 <input type="text" name="year_of_registration" value={{duser.doctor.year_of_registration|date:'Y-m-d'}} class="vDateField" size="10" required="" id="id_year_of_registration">
   </div>
 </div>
@@ -198,11 +273,12 @@
 <div class="form-row field-qualification">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_qualification">Qualification:</label>
-            
+            </div>
+            <div class="col-75">
                 <input type="text" name="qualification" value={{duser.doctor.qualification}} class="vTextField" maxlength="20" required="" id="id_qualification">
             
         
@@ -214,11 +290,12 @@
 <div class="form-row field-State_Medical_Council">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_State_Medical_Council">State Medical Council:</label>
-            
+    </div>
+    <div class="col-75">        
                 <input type="text" name="State_Medical_Council" value={{duser.doctor.State_Medical_Council}} class="vTextField" maxlength="30" required="" id="id_State_Medical_Council">
             
         
@@ -230,11 +307,12 @@
 <div class="form-row field-specialization">
 
 
-    <div>
+    <div class="col-25">
         
         
             <label class="required" for="id_specialization">Specialization:</label>
-            
+            </div>
+            <div class="col-75">
                 <input type="text" name="specialization" value={{duser.doctor.specialization}} class="vTextField" maxlength="30" required="" id="id_specialization">
             
         
@@ -245,11 +323,12 @@
 <div class="form-row field-rating">
 
 
-        <div>
+        <div class="col-25">
             
             
                 <label class="required" for="id_specialization">Rating:</label>
-                
+         </div>
+         <div class="col-75">       
                     <input type="text" name="Rating" value={{duser.doctor.rating}}/5 class="vTextField" maxlength="30" required="" id="id_Rating">
                 
             
